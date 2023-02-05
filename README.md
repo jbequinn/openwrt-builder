@@ -6,12 +6,12 @@ with all desired settings preconfigured.
 
 ### Default run
 ```
-docker run --rm -e CPUS=5 -v /tmp/patches:/patches -v /tmp/output:/output -v /tmp/config:/config jbequinn/openwrt-builder
+docker run --rm -v /tmp/patches:/patches -v /tmp/output:/output -v /tmp/config:/config jbequinn/openwrt-builder
 ```
 ### Custom run
 In case you need to do some extra operations before building images
 ```
-docker run --rm -it -e CPUS=5 -v /tmp/patches:/patches -v /tmp/output:/output -v /tmp/config:/config jbequinn/openwrt-builder /bin/bash
+docker run --rm -it -v /tmp/patches:/patches -v /tmp/output:/output -v /tmp/config:/config jbequinn/openwrt-builder /bin/bash
 ```
 ### Volumes
 - `/patches`: any *.patch files mounted in this directory will be applied as git patches.
