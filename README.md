@@ -19,9 +19,10 @@ docker run --rm -it -v /tmp/patches:/patches -v /tmp/output:/output -v /tmp/conf
 - `/output`: compiled images will be copied to this directory.
 
 ### Environment variables
+- `VERBOSE`: defaults to `false`. Set to true to use make with `V=s`.
 - `CPUS`: number of CPUs to use during compilation, or all available if not specified.
-- `PATCHES`: Defaults to `/patches`. Directory to use for git patches.
-- `CONFIG`: Defaults to `/config`. Directory where to look for the `.config` file.
+- `PATCHES`: defaults to `/patches`. Directory to use for git patches.
+- `CONFIG`: defaults to `/config`. Directory where to look for the `.config` file.
 - `OPENWRT_REPO`: Defaults to `/home/openwrt/openwrt`. OpenWRT repo directory to use for compiling images. The official OpenWRT repo (master branch) will be used if this directory does not exist.
 
 ## Build

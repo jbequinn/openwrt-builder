@@ -3,6 +3,7 @@ FROM debian:bullseye
 ENV OPENWRT_REPO=/home/openwrt/openwrt
 ENV PATCHES=/patches
 ENV CONFIG=/config
+ENV VERBOSE="false"
 
 ## Install dependencies
 RUN apt-get update

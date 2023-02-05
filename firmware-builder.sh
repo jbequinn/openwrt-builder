@@ -40,6 +40,11 @@ if [ -d "$CONFIG" ]; then
 fi
 
 make defconfig && make oldconfig
-make -j${CPUS:-$(nproc)} V=s toolchain/install; make -j${CPUS:-$(nproc)} V=s
+
+verbose_params=""
+if [ "$VERBOSE" = "true" ]; then
+  verbose_params="V=s"
+fi
+make -j${CPUS:-$(nproc)} $verbose_params toolchain/install; make -j${CPUS:-$(nproc)} $verbose_params
 
 cp -r bin/targets/* /output
