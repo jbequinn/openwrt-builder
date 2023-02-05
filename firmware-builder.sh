@@ -24,8 +24,8 @@ if [ -d "$PATCHES" ]; then
   done
 fi
 
-scripts/feeds update -a
-scripts/feeds install -a
+./scripts/feeds update -a
+./scripts/feeds install -a
 
 export TERM=xterm
 
