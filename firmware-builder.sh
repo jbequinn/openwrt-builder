@@ -40,7 +40,6 @@ if [ -d "$CONFIG" ]; then
 fi
 
 make defconfig && make oldconfig
-found_cpus=$(nproc)+1
-make -j${CPUS:-$found_cpus} V=s toolchain/install; make -j${CPUS:-$found_cpus} V=s
+make -j${CPUS:-$(nproc)} V=s toolchain/install; make -j${CPUS:-$(nproc)} V=s
 
 cp -r bin/targets/* /output
