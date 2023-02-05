@@ -5,10 +5,14 @@ ENV PATCHES=/patches
 ENV CONFIG=/config
 ENV VERBOSE="false"
 
-## Install dependencies
+# Install dependencies
+# See: https://openwrt.org/docs/guide-developer/toolchain/install-buildsystem#debianubuntu
 RUN apt-get update
-RUN apt-get install -y sudo build-essential clang flex g++ gawk gettext file git \
-    libncurses5-dev libssl-dev nano python3-distutils rsync unzip zlib1g-dev wget
+RUN apt-get install -y build-essential clang flex bison g++ gawk gcc-multilib gettext \
+            git libncurses5-dev libssl-dev nano python3-distutils rsync unzip zlib1g-dev \
+            file wget
+# extra packages
+RUN apt-get install -y sudo nano
 RUN apt-get clean
 
 # Add openwrt user
