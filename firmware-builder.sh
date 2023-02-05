@@ -7,7 +7,7 @@ fi
 
 if [ ! -d "$OPENWRT_REPO" ]; then
   echo "Repository directory does not exist. Will clone official openwrt repo master branch"
-  git clone https://github.com/openwrt/openwrt.git -b master openwrt
+  git clone https://github.com/openwrt/openwrt.git -b master "$OPENWRT_REPO"
 fi
 
 cd "$OPENWRT_REPO"
